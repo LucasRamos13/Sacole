@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Administrador
@@ -14,7 +16,7 @@ public class Sacole {
     private Integer serie;
     private Integer codigo;
     private String sabor;
-    private String validade;
+    private LocalDate validade;
 
     public Double getPreco() {
         return preco;
@@ -48,11 +50,11 @@ public class Sacole {
         this.sabor = sabor;
     }
 
-    public String getValidade() {
+    public LocalDate getValidade() {
         return validade;
     }
 
-    public void setValidade(String validade) {
+    public void setValidade(LocalDate validade) {
         this.validade = validade;
     }
 

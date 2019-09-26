@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -21,7 +22,7 @@ public class DaoSacole {
         try {
             PreparedStatement ps = conexao.Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, objeto.getSabor());
-            ps.setString(2, objeto.getValidade());
+            ps.setDate(2, Date.valueOf(objeto.getValidade()));
             ps.setDouble(3, objeto.getPreco());
             ps.setInt(4, objeto.getSerie());
             ps.executeUpdate();
@@ -37,7 +38,7 @@ public class DaoSacole {
         try {
             PreparedStatement ps = conexao.Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, objeto.getSabor()); 
-            ps.setString(2, objeto.getValidade());
+            ps.setDate(2, Date.valueOf(objeto.getValidade()));
             ps.setDouble(3, objeto.getPreco());
             ps.setInt(4, objeto.getSerie());
             ps.setInt(5, objeto.getCodigo());
@@ -109,6 +110,7 @@ public class DaoSacole {
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
+
         return null;
     }
 }

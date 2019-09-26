@@ -5,6 +5,8 @@
  */
 package controlador;
 import dao.DaoSacole;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 import modelo.Sacole;
 import tela.manutencao.ManutencaoSacole;
@@ -21,7 +23,7 @@ public class ControladorSacole {
     public static void inserir(ManutencaoSacole man){
         Sacole objeto = new Sacole();
         objeto.setSabor(man.jtfSabor.getText());
-        objeto.setValidade(man.jtfValidade.getText());
+        objeto.setValidade(LocalDate.parse(man.jtfValidade.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         objeto.setSerie(Integer.parseInt(man.jtfSerie.getText()));
         objeto.setPreco(Double.parseDouble(man.jtfPreco.getText()));
         
@@ -42,7 +44,7 @@ man.dispose();//fechar a tela da manutenção
         //definir todos os atributos
         objeto.setCodigo(Integer.parseInt(man.jtfCodigo.getText()));
         objeto.setSabor(man.jtfSabor.getText());
-        objeto.setValidade(man.jtfValidade.getText());
+        objeto.setValidade(LocalDate.parse(man.jtfValidade.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         objeto.setSerie(Integer.parseInt(man.jtfSerie.getText()));
         objeto.setPreco(Double.parseDouble(man.jtfPreco.getText()));
         
@@ -79,7 +81,7 @@ man.dispose();//fechar a tela da manutenção
         //Definindo os valores do campo na tela (um para cada atributo/campo)
         man.jtfCodigo.setText(objeto.getCodigo().toString());
         objeto.setSabor(man.jtfSabor.getText());
-        objeto.setValidade(man.jtfValidade.getText());
+        objeto.setValidade(LocalDate.parse(man.jtfValidade.getText(), DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         objeto.setSerie(Integer.parseInt(man.jtfSerie.getText()));
         objeto.setPreco(Double.parseDouble(man.jtfPreco.getText()));
         
